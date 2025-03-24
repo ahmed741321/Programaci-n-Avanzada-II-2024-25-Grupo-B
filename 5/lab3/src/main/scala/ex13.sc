@@ -4,7 +4,7 @@ val sentences = Set(
   "Functional programming is elegant"
 )
 val stopWords = Set("a", "the", "is", "of")
-
+// selection one
 // Step 1: Split each sentence into words and flatten the list
 val words = sentences.flatMap(_.split("\\W+"))
 
@@ -16,3 +16,11 @@ val uniqueWords = filteredWords.toSet
 
 // Output the result
 println(uniqueWords)  // HashSet(programming, language, scala, power, elegant, functional, great)
+
+
+
+// selection two
+sentences.map(_.toLowerCase())
+  .flatMap(_.split(" "))
+  .filterNot(stopWords.contains(_))
+  .toSet
